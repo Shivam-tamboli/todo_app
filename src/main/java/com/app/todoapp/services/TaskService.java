@@ -18,6 +18,14 @@ public class TaskService {
     public List<Task> getAllTasks(){
         return taskRepository.findAll();
     }
+
+    public void createTask(String title){
+        Task task = new Task();
+        task.setTitle(title);
+        task.setCompleted(false);
+        taskRepository.save(task);
+
+    }
 }
 //These class files are used to write business logic in a different layer.
 //service layer acts as a bridge between Controller(which handles request) and the repo(which interacts with DB)
