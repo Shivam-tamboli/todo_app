@@ -20,6 +20,7 @@ public class TaskController {
     }
 
     //an endpoint.
+    //this method will display the all task.
     @GetMapping
     public String getTasks(Model model ){//models pass data controller to view html.
         List<Task> tasks = taskService.getAllTasks();
@@ -27,10 +28,26 @@ public class TaskController {
         return "tasks";
     }
 
+    //this method will add a new task.
     @PostMapping("/add")
     public String createTask(@RequestParam String title){//models pass data controller to view html.
         taskService.createTask(title);
         return "redirect:/tasks";
     }
+
+//    this method delete a task by id.
+    @GetMapping("/{id}/delete")
+    public String deleteTask(@PathVariable Long id){
+        taskService.deleteTask(id);
+        return "redirect:/tasks";
+    }
+
+//    this method find a task by id.
+//    id@GetMapping("/{id}/toggle")
+//    public String toggleTask(@PathVariable Long id){
+//        taskService.toggleTask(id);
+//        return "redirect:/tasks";
+//
+//    }
 }
 //controller will have all the end points, method s here to handle users request related to task.
