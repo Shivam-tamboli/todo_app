@@ -27,10 +27,10 @@ public class TaskController {
         return "tasks";
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public String createTask(@RequestParam String title){//models pass data controller to view html.
         taskService.createTask(title);
-        return "redirect:/ ";
+        return "redirect:/tasks";
     }
 }
 //controller will have all the end points, method s here to handle users request related to task.
