@@ -26,6 +26,18 @@ public class TaskService {
         taskRepository.save(task);
 
     }
+
+    public void deleteTask(Long id){
+        taskRepository.deleteById(id);
+    }
+
+//find the task by its id.
+//    public void toggleTask(Long id){
+//        Task task = taskRepository.findById(id)
+//                .orElseThrow(() -> new IllegalArgumentException("Invalid task id"));
+//                task.setCompleted(!task.isCompleted());
+//                taskRepository.save(task);
+//        }
 }
 //These class files are used to write business logic in a different layer.
 //service layer acts as a bridge between Controller(which handles request) and the repo(which interacts with DB)
