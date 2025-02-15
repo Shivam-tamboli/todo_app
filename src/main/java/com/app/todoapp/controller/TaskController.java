@@ -43,11 +43,11 @@ public class TaskController {
     }
 
 //    this method find a task by id.
-//    id@GetMapping("/{id}/toggle")
-//    public String toggleTask(@PathVariable Long id){
-//        taskService.toggleTask(id);
-//        return "redirect:/tasks";
-//
-//    }
+    @GetMapping("/{id}/toggle")
+    public String toggleTask(@PathVariable Long id){
+        taskService.toggleTask(id);
+        return "redirect:/tasks";
+
+    }
 }
 //controller will have all the end points, method s here to handle users request related to task.
